@@ -1,0 +1,63 @@
+<div id="stream">
+<!-- 	<%= form_for :friend, url: messages_path do |f| %>
+
+		<div id="stream-list" class="follow-list">
+			<ul>   
+				<% @recipients.each do |user| %>
+					<label for="user<%= user.id %>" >
+						<li id="stream_item">
+							<span class="list-group-item"><%= user.username %></span>
+							<%= check_box_tag "message[user_tokens][]", user.id, @users.include?(user), id: "user#{user.id}" %>
+						</li>
+					</label>
+					<br>
+				<% end %>
+			</ul>
+		</div>
+
+		<div id ="stream-footer">
+			<%= f.button :"Add Friend", class: "btn btn-outline" %>
+		</div>
+
+	<% end %> -->
+	<!-- <div id="stream-list" class="follow-list">
+		<ul>  
+			<% for user in @users %>
+				<div class="user">
+					<li id="stream_item">
+					<strong><%= user.username %></strong>
+						<%= link_to "Add Friend", friendships_path(:user_id => user, :friend_id => user), :method => :post %>
+					<div class="clear"></div>
+					</li>
+				</div>
+			<% end %>
+		</ul> -->
+		</div>
+
+
+
+<div id="stream">
+
+    <div id="stream-list" class="follow-list">
+      <ul>   
+        <% for user in @users %>
+          <label for="user<%= user.id %>" >
+            <li id="stream_item">
+              <span class="list-group-item"><%= user.username %></span>
+
+            </li>
+            <br>
+            <li id="stream_item">
+             <%= link_to "Add Friend", friendships_path(:user_id => user, :friend_id => user), :method => :post %>
+             </li>
+          </label>
+          <br>
+        <% end %>
+      </ul>
+    </div>
+
+    <div id ="stream-footer">
+    </div>
+    </div>
+
+</div>
